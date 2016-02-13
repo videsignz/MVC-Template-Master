@@ -90,17 +90,23 @@ class Application
 	 */
 	private function createControllerAndActionNames()
 	{
-		// check for controller: no controller given ? then make controller = default controller (from config)
-		if (!$this->controller_name) {
+		
+		// If a controller name is given, but an action is not
+		if ($this->controller_name && (!$this->action_name || (strlen($this->action_name) == 0))) {
+			// Set controller to 'index/action'
+			$this->action_name = $this->controller_name;				
 			$this->controller_name = Config::get('DEFAULT_CONTROLLER');
 		}
-
-		// check for action: no action given ? then make action = default action (from config)
-		if (!$this->action_name OR (strlen($this->action_name) == 0)) {
+		
+		// If no controller or action name is given, use defaults 'index/index'
+		if (!$this->controller_name && (!$this->action_name || (strlen($this->action_name) == 0))) {
+			$this->controller_name = Config::get('DEFAULT_CONTROLLER');
 			$this->action_name = Config::get('DEFAULT_ACTION');
-		}
-
+		}		
+		
+		
 		// rename controller name to real controller class/file name ("index" to "IndexController")
 		$this->controller_name = ucwords($this->controller_name) . 'Controller';
 	}
+	
 }

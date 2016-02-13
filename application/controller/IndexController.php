@@ -18,4 +18,30 @@ class IndexController extends Controller
     {
         $this->View->render('index/index');
     }
+    /**
+     * Register page
+     * Show the register form, but redirect to main-page if user is already logged-in
+     */
+    public function register()
+    {
+        if (LoginModel::isUserLoggedIn()) {
+            Redirect::home();
+        } else {
+            $this->View->render('register/index');
+        }
+    }
+    /**
+     * Index, default action (shows the login form), when you do login/index
+     */
+    public function login()
+    {
+        // if user is logged in redirect to main-page, if not show the view
+        if (LoginModel::isUserLoggedIn()) {
+            Redirect::home();
+        } else {
+            $data = array('redirect' => Request::get('redirect') ? Request::get('redirect') : NULL);
+            $this->View->render('login/index', $data);
+        }
+    }
+	
 }
