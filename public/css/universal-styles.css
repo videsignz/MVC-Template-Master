@@ -6,11 +6,16 @@ body {
     font-style: normal;
     font-weight:400;
 	font-family: 'Open Sans', sans-serif;
-	font-size:16px;
 	line-height:1.50em;
     background-color:fff;
 }
 
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight:300;
+    line-height:1.25em;
+}
 
 @media only screen and (min-width: 1281px) {
 }

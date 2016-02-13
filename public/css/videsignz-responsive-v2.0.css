@@ -8,6 +8,7 @@
 /* == Body Classes ================================= */
 
 body {
+	width:100%;
 	min-width:280px;
 }
 
@@ -28,22 +29,14 @@ h4 { font-size:1.40em !important; }
 h5 { font-size:1.30em !important; }
 h6 { font-size:1.20em !important; }
 
-h1, h2, h3, h4, h5, h6 {
-	font-family: 'Open Sans', sans-serif;
-    font-style: normal;
-    font-weight:300;
-    line-height:1.25em;
-}
-
 /* == Clearfix ===================================== */
 
-.row:after, .row:before, .clearfix:before, .clearfix:after {
-	
+.row:after, .row:before, .clearfix:before, .clearfix:after {	
 	content:"\0020";
 	display:block;
 	height:0px;
 	visibility:hidden;
-	
+	opacity:0;
 }
 
 .clearfix:after, .row:after { clear:both; }
@@ -127,7 +120,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media only screen and (min-width: 1281px) {
 
-body { font-size:.95em; }	
+body { font-size:.85em; }	
 .xl-limit-w { max-width:1280px; }
 	
 /* == (Extra Large) Column Classes ========================== */
@@ -198,7 +191,7 @@ body { font-size:.95em; }
 
 @media only screen and (min-width: 1025px) and (max-width: 1280px){
 
-body { font-size:.95em; }
+body { font-size:.84em; }
 .lg-limit-w { max-width:1024px; }
 	
 /* == (Large) Column Classes ================================ */
@@ -269,7 +262,7 @@ body { font-size:.95em; }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
 
-body { font-size:.90em; }
+body { font-size:.83em; }
 .md-limit-w { max-width:768px; }
 	
 /* == (Medium) Column Classes =============================== */
@@ -340,7 +333,7 @@ body { font-size:.90em; }
 
 @media only screen and (min-width: 481px) and (max-width: 768px) {
 
-body { font-size:.85em; }
+body { font-size:.82em; }
 .sm-limit-w { max-width:480px; }
 
 /* == (Small) Column Classes ================================ */
